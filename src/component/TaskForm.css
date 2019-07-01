@@ -1,0 +1,8 @@
+input,
+select {
+    margin: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    font-family: inherit;
+}
