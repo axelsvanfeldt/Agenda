@@ -1,3 +1,10 @@
 .app {
     height: 100vh;
+    overflow-y: scroll;
+}
+
+#app-content {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
 }

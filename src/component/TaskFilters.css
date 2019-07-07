@@ -1,0 +1,9 @@
+#task-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 14px;
+}

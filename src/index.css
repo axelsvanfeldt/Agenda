@@ -1,15 +1,32 @@
-body {
-    background: linear-gradient(4deg,#e56673,#671940);
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Scrollbars */
+
+html, body, div {
+    scrollbar-width: thin;
+    scrollbar-color: #BBB #999;
 }
 
-.task-list {
-    padding-top: 40px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+div::-webkit-scrollbar {
+	width: 10px;}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track {
+    background: #BBB;
+	width: 10px;}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
+    background: #888;
+	width: 10px;}
+
+/* Other */
+
+body {
+    color: #444;
+    background: linear-gradient(4deg,#e56673,#671940);
+    margin: 0;
+    font-family: "Ubuntu", -apple-system, "Droid Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
