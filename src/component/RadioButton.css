@@ -11,8 +11,8 @@
     margin: 0 2px 0 2px;
     background: #fff;
     padding: 5px 8px 5px 8px;
-    border: 1px solid #CCC;
-    border-radius: 3px;
+    border: var(--border-default);
+    border-radius: var(--border-radius-small);
 }
 
 .input-radio-option-selected {

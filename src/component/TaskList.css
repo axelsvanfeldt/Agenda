@@ -1,7 +1,7 @@
 .task-list {
     padding: 20px;
-    border-radius: 4px;
-    background-color: #f2f2f2;
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-white);
     width: calc(100% - 40px);
     text-align: center;
 }

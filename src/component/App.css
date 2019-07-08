@@ -3,7 +3,7 @@
     overflow-y: scroll;
 }
 
-#app-content {
+.app-content {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;

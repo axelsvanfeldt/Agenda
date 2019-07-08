@@ -11,77 +11,41 @@ form {
 input, 
 select {
     font-family: inherit;
-}
-
-#input-task-button {
-    margin: 8px;
-    border: none;
-    border-radius: 3px;
-    background-color: rgba(255,255,255,0.2);
-    padding: 8px;
-    width: 80px;
-    color: #FFF;
-    font-size: 0.8em;
-    cursor: pointer;
-}
-
-#input-task-text {
-    font-size: 1.1em;
-    color: #FFF;
+    color: #fff;
     border: none;
     padding: 12px;
-    background: rgba(0,0,0,0.1);
-    border-bottom: 2px solid #e56673;
+    background-color: rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--color-pink); 
+}
+input:focus,
+select:focus {
+    outline: none;
+    border-bottom: 2px solid var(--color-yellow);
 }
 
-#input-task-text::-webkit-input-placeholder {
-  color: #fff;
-}
-#input-task-text:-moz-placeholder {
-  color: #fff;
-}
-#input-task-text::-moz-placeholder {
-  color: #fff;
-}
-#input-task-text:-ms-input-placeholder {
-  color: #fff;
-}
-#input-task-text::-ms-input-placeholder {
-  color: #fff;
-}
-#input-task-text::placeholder {
-  color: #fff;
-}
-
-#input-task-text:focus {
-    outline-width: 0;
-}
-
-.react-datepicker-wrapper input {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.4em;
-}
-.react-datepicker-wrapper input:focus {
-    outline-width: 0;
-}
 
 select {
+    padding: 11px 12px 11px 12px;
+}
+select::-ms-expand {
+    display: none;
+}
+
+.select-css {
     display: block;
     font-size: 16px;
     font-family: sans-serif;
     font-weight: 700;
     color: #444;
     line-height: 1.3;
-    padding: .5em 1.4em .4em .8em;
+    padding: .6em 1.4em .5em .8em;
     width: 100%;
-    max-width: 120px; 
+    max-width: 100%; 
     box-sizing: border-box;
     margin: 0;
     border: 1px solid #aaa;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    border-radius: 3px;
+    border-radius: .5em;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
@@ -92,19 +56,60 @@ select {
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
 }
-select::-ms-expand {
-    display: none;
-}
-select:hover {
-    border-color: #888;
-}
-select:focus {
+
+
+.select-css:focus {
     border-color: #aaa;
     box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
     box-shadow: 0 0 0 3px -moz-mac-focusring;
     color: #222; 
     outline: none;
 }
-select option {
+.select-css option {
+    color: pink;
     font-weight:normal;
+}
+
+
+
+
+.input-task-button {
+    margin: 8px;
+    border: none;
+    border-radius: var(--border-radius-small);
+    background-color: rgba(255,255,255,0.2);
+    padding: 8px;
+    width: 80px;
+    color: #FFF;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.react-datepicker-wrapper input {
+    width: 70px;
+}
+
+.react-datepicker-wrapper input::-webkit-input-placeholder,
+.input-task-text::-webkit-input-placeholder {
+  color: #fff;
+}
+.react-datepicker-wrapper input:-moz-placeholder,
+.input-task-text:-moz-placeholder {
+  color: #fff;
+}
+.react-datepicker-wrapper input::-moz-placeholder,
+.input-task-text::-moz-placeholder {
+  color: #fff;
+}
+.react-datepicker-wrapper input:-ms-input-placeholder,
+.input-task-text:-ms-input-placeholder {
+  color: #fff;
+}
+.react-datepicker-wrapper input::-ms-input-placeholder,
+.input-task-text::-ms-input-placeholder {
+  color: #fff;
+}
+.react-datepicker-wrapper input::placeholder,
+.input-task-text::placeholder {
+  color: #fff;
 }

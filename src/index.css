@@ -1,8 +1,23 @@
+/* Variables */
+
+:root {
+    --color-green: #39ac73;
+    --color-yellow: #ff9900;
+    --color-red: #cc3300;
+    --color-blue: #5F9EA0;
+    --color-pink: #e56673;
+    --color-purple: #671940;
+    --color-dark-gray: #444;
+    --color-white: #f2f2f2;
+    --border-radius-small: 3px;
+    --border-default: 1px solid #ccc;
+}
+
 /* Scrollbars */
 
 html, body, div {
     scrollbar-width: thin;
-    scrollbar-color: #BBB #999;
+    scrollbar-color: #bbb #999;
 }
 
 html::-webkit-scrollbar,
@@ -12,7 +27,7 @@ div::-webkit-scrollbar {
 html::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track,
 div::-webkit-scrollbar-track {
-    background: #BBB;
+    background: #bbb;
 	width: 10px;}
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb,
@@ -23,10 +38,10 @@ div::-webkit-scrollbar-thumb {
 /* Other */
 
 body {
-    color: #444;
-    background: linear-gradient(4deg,#e56673,#671940);
+    color: var(--color-dark-gray);
+    background: linear-gradient(4deg, var(--color-pink), var(--color-purple));
     margin: 0;
-    font-family: "Ubuntu", -apple-system, "Droid Sans", sans-serif;
+    font-family: -apple-system, "Droid Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

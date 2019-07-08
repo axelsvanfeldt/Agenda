@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Branding from './Branding';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import Task from './Task';
@@ -167,14 +168,20 @@ const App = () => {
     
     return (
         <div className="app">
-            <div id="app-content">
+            <div className="app-content">
+                <Branding />
                 <TaskForm 
                     addTask={addTask} 
                     handleChange={handleFormChange} 
                     handleSubmit={handleFormSubmit} 
                     formValues={formValues} 
                 />
-                <TaskList renderTasks={renderTasks} handleFilterChange={handleFilterChange} filters={filterData} />
+                <TaskList 
+                    renderTasks={renderTasks} 
+                    handleFilterChange={handleFilterChange} 
+                    filters={filterData} 
+                />
+                <a href="https://codeant.se" target="_blank">codeant.se</a>
             </div>
         </div>
     )

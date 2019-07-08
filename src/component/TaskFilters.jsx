@@ -6,7 +6,7 @@ import './TaskFilters.css';
 
 const TaskFilters = ({handleChange, filters}) => {
     return(
-        <div id="task-filters">
+        <div className="task-filters">
             <RadioButton 
                 group="visible_tasks" 
                 label="Show" 

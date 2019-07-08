@@ -1,5 +1,5 @@
 .task {
-    padding: 8px 0 8px 0;
+    padding: 9px 0 9px 0;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -15,7 +15,7 @@
     margin-left: 14px;
     width: 64px;
     padding: 2px 4px 2px 4px;
-    border-radius: 3px;
+    border-radius: var(--border-radius-small);
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.3);
@@ -43,7 +43,7 @@
 }
 
 .task-overdue:not(.task-complete) .task-deadline {
-    color: red;
+    color: var(--color-red);
 }
 
 .task-icons {
@@ -54,22 +54,22 @@
 
 .task-icons svg {
     cursor: pointer;
-    color: cadetblue;
+    color: var(--color-blue);
     font-size: 1.2em;
     margin-left: 4px;
 }
 .task-icons svg:hover {
-    color: orange;
+    color: var(--color-yellow);
 }
 
 .task-priority-3 {
-    background-color: #cc3300;
+    background-color: var(--color-red);
 }
 
 .task-priority-2 {
-    background-color: #ff9900;
+    background-color: var(--color-yellow);
 }
 
 .task-priority-1 {
-    background-color: #39ac73;
+    background-color: var(--color-green);
 }
