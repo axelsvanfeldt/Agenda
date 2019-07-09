@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import Branding from './Branding';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import Task from './Task';
@@ -169,7 +168,6 @@ const App = () => {
     return (
         <div className="app">
             <div className="app-content">
-                <Branding />
                 <TaskForm 
                     addTask={addTask} 
                     handleChange={handleFormChange} 
@@ -181,7 +179,7 @@ const App = () => {
                     handleFilterChange={handleFilterChange} 
                     filters={filterData} 
                 />
-                <a href="https://codeant.se" target="_blank">codeant.se</a>
+                <a href="https://codeant.se" rel="noopener noreferrer" target="_blank">codeant.se</a>
             </div>
         </div>
     )

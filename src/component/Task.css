@@ -1,9 +1,8 @@
 .task {
     padding: 9px 0 9px 0;
+    /*flex-wrap: nowrap;*/
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: row wrap;
     text-align: left;
     border-bottom: 1px dashed #DDD;
 }
@@ -11,15 +10,18 @@
     border-bottom: 1px solid #DDD;
 }
 
+.task > div {
+    
+}
+
 .task-priority {
     margin-left: 14px;
-    width: 64px;
+    min-width: 62px;
     padding: 2px 4px 2px 4px;
     border-radius: var(--border-radius-small);
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 0 5px rgba(0,0,0,0.3);
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 700;
     color: #fff;
 }
@@ -27,7 +29,6 @@
 .task-text {
     padding: 0 14px 0 14px;
     flex: 1;
-    /*align-self: flex-start;*/
 }
 
 .task-deadline {
@@ -46,19 +47,13 @@
     color: var(--color-red);
 }
 
-.task-icons {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-.task-icons svg {
+.task svg {
     cursor: pointer;
     color: var(--color-blue);
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-left: 4px;
 }
-.task-icons svg:hover {
+.task svg:hover {
     color: var(--color-yellow);
 }
 

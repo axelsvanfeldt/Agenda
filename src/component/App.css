@@ -4,7 +4,13 @@
 }
 
 .app-content {
-    padding: 40px;
+    padding: 20px 14px 14px 14px;
     max-width: 900px;
     margin: 0 auto;
+}
+
+@media all and (min-width: 768px) {
+    .app-content {
+        padding: 40px;
+    }
 }
