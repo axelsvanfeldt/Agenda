@@ -15,7 +15,8 @@ const TaskForm = ({addTask, handleChange, handleSubmit, formValues}) => {
                     autoComplete="off" 
                     value={formValues.text} 
                     placeholder="Enter task"
-                    onChange={(e) => handleChange('text', e.target.value)} 
+                    onChange={(e) => handleChange('text', e.target.value)}
+                    required
                 />
             </div>
             <div>
@@ -32,6 +33,7 @@ const TaskForm = ({addTask, handleChange, handleSubmit, formValues}) => {
                     dateFormat="yyyy-MM-dd"
                     selected={new Date(formValues.deadline)}
                     onChange={(e) => handleChange('deadline', e)} 
+                    minDate={new Date()}
                 />
             </div>
             <button className="input-task-button" onClick={handleSubmit}>Submit</button>

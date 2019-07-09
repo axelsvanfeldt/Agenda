@@ -1,39 +1,12 @@
 .task {
-    padding: 9px 0 9px 0;
+    padding: 14px 0 14px 0;
     /*flex-wrap: nowrap;*/
+    justify-content: space-between;
     display: flex;
     flex-flow: row wrap;
+    align-items: flex-start;
     text-align: left;
-    border-bottom: 1px dashed #DDD;
-}
-.task:hover {
     border-bottom: 1px solid #DDD;
-}
-
-.task > div {
-    
-}
-
-.task-priority {
-    margin-left: 14px;
-    min-width: 62px;
-    padding: 2px 4px 2px 4px;
-    border-radius: var(--border-radius-small);
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 0.8em;
-    font-weight: 700;
-    color: #fff;
-}
-
-.task-text {
-    padding: 0 14px 0 14px;
-    flex: 1;
-}
-
-.task-deadline {
-    font-size: 0.9em;
-    padding: 0 0 0 14px;
 }
 
 .task-complete .task-priority,
@@ -47,14 +20,16 @@
     color: var(--color-red);
 }
 
-.task svg {
-    cursor: pointer;
-    color: var(--color-blue);
-    font-size: 1.3em;
-    margin-left: 4px;
-}
-.task svg:hover {
-    color: var(--color-yellow);
+.task-priority {
+    margin-left: 8px;
+    min-width: 60px;
+    padding: 2px 4px 2px 4px;
+    border-radius: var(--border-radius-small);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: 700;
+    color: #fff;
 }
 
 .task-priority-3 {
@@ -67,4 +42,68 @@
 
 .task-priority-1 {
     background-color: var(--color-green);
+}
+
+.task-deadline {
+    white-space: nowrap;
+    font-size: 0.9em;
+    padding: 0 6px 0 8px;
+}
+
+.task-text {
+    align-self: flex-end;
+    order: 5;
+    flex: 0 0 100%;
+    padding: 8px 0 0 0;
+}
+
+.task svg {
+    cursor: pointer;
+    color: var(--color-blue);
+    font-size: 1.3em;
+    margin-left: 4px;
+}
+.task svg:hover {
+    color: var(--color-yellow);
+}
+
+.task-alter-icons {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@media all and (min-width: 481px) {
+    
+    .task {
+        flex-flow: row nowrap;
+        padding: 9px 0 9px 0;
+        border-bottom: 1px dashed #DDD;
+    }
+    .task:hover {
+        border-bottom: 1px solid #DDD;
+    }
+    
+    .task-complete-icons,
+    .task-priority,
+    .task-deadline,
+    .task-text,
+    .task-alter-icons {
+        order: unset;
+    }
+    
+    .task-priority {
+        margin-left: 14px;
+        font-size: 0.8em;
+    }
+    
+    .task-deadline {
+        padding: 0 0 0 14px;
+    }
+    
+    .task-text {
+        padding: 0 14px 0 14px;
+        flex: auto;
+        align-self: auto;
+    }
+    
 }

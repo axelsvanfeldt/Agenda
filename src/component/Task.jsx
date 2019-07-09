@@ -16,13 +16,13 @@ const Task = ({task, index, completeTask, prepareEdit, removeTask, togglePriorit
     
     return(
         <div className={`${completeClass} ${overdueClass}`}>
-            <div className="task-icons">
+            <div className="task-complete-icons">
                 <FontAwesomeIcon icon={completeIcon} onClick={() => completeTask(index)} />
             </div>
             <div className={`task-priority task-priority-${task.priority}`}>{getPriorityText(task.priority)}</div>
             <div className="task-deadline">{task.deadline.toString().slice(0,10)}</div>
             <div className="task-text">{task.text}</div>
-            <div className="task-icons">
+            <div className="task-alter-icons">
                 <FontAwesomeIcon icon={faEdit} onClick={() => prepareEdit(index)} />
                 <FontAwesomeIcon icon={faTrashAlt} onClick={() => removeTask(index)} />
             </div>

@@ -27,7 +27,7 @@ const App = () => {
         form: {
             text: '',
             priority: 1,
-            deadline: addDaysToDate(1),
+            deadline: new Date(),
             edit: false
         },
         filters: {
@@ -75,7 +75,19 @@ const App = () => {
     const filterData = JSON.parse(filters);
     
     const renderTasks = () => {
-        let sortedTasks = filterData.sort_by === 'deadline' ? taskData.sort((a, b) => new Date(a.deadline) - new Date(b.deadline)) : taskData.sort((a, b) => b.priority - a.priority);
+        let sortedTasks = taskData;
+        if (filterData.sort_by === 'deadline') {
+            sortedTasks = taskData.sort((a, b) => {
+                let diff = new Date(a.deadline.toString().slice(0,10)) - new Date(b.deadline.toString().slice(0,10));
+                return diff ? diff : b.priority - a.priority;
+            });
+        }
+        else {
+            sortedTasks = taskData.sort((a, b) => {
+                let diff = b.priority - a.priority;
+                return diff ? diff : new Date(a.deadline) - new Date(b.deadline);
+            });
+        }
         sortedTasks = sortedTasks.map((task, index) => {
             task.overdue = new Date(task.deadline) <= new Date() ? true : false;
             if ((filterData.visible_tasks === 'completed' && !task.isComplete) || (filterData.visible_tasks === 'active' && task.isComplete)) return false;
@@ -137,7 +149,6 @@ const App = () => {
     }    
     
     const handleFormSubmit = e => {
-        console.log(formValues.edit);
         e.preventDefault();
         if (!formValues.text) return;
         formValues.edit ? editTask() : addTask();

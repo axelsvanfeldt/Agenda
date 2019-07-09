@@ -81,26 +81,6 @@ select option {
     width: 80px;
 }
 
-.react-datepicker-wrapper input::-webkit-input-placeholder,
-.input-task-text::-webkit-input-placeholder {
-    color: #fff;
-}
-.react-datepicker-wrapper input:-moz-placeholder,
-.input-task-text:-moz-placeholder {
-    color: #fff;
-}
-.react-datepicker-wrapper input::-moz-placeholder,
-.input-task-text::-moz-placeholder {
-    color: #fff;
-}
-.react-datepicker-wrapper input:-ms-input-placeholder,
-.input-task-text:-ms-input-placeholder {
-    color: #fff;
-}
-.react-datepicker-wrapper input::-ms-input-placeholder,
-.input-task-text::-ms-input-placeholder {
-    color: #fff;
-}
 .react-datepicker-wrapper input::placeholder,
 .input-task-text::placeholder {
     color: #fff;
