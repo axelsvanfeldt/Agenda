@@ -3,12 +3,12 @@ form {
     text-align: center;
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-end;
+    flex-flow: row wrap;
 }
 
 form > div:nth-of-type(1) {
-    flex: 1;
+    flex: 1 0 100%;
 }
 
 .input-label {
@@ -32,9 +32,10 @@ select {
     font-family: inherit;
     color: #fff;
     border: none;
-    padding: 12px;
+    padding: 10px 12px 10px 12px;
     background-color: rgba(0,0,0,0.1);
     border-bottom: 2px solid var(--color-pink);
+    margin-bottom: 14px;
 }
 input:focus,
 select:focus {
@@ -44,7 +45,7 @@ select:focus {
 
 select {
     cursor: pointer;
-    padding: 11px 12px 11px 12px;
+    padding: 9px 12px 9px 12px;
 }
 select::-ms-expand {
     display: none;
@@ -55,11 +56,11 @@ select option {
 }
 
 .input-task-button {
-    margin: 22px 0 0 14px;
+    flex: 1 1 80%;
     border: none;
     background-color: rgba(255,255,255,0.2);
-    width: 100px;
-    height: 45px;
+    width: 90px;
+    height: 40px;
     color: #FFF;
     font-size: 0.8em;
     font-weight: 700;
@@ -78,10 +79,33 @@ select option {
 
 .react-datepicker-wrapper input {
     text-align: center;
-    width: 80px;
 }
 
 .react-datepicker-wrapper input::placeholder,
 .input-task-text::placeholder {
     color: #fff;
+}
+
+@media all and (min-width: 768px) {
+    
+    input, 
+    select {
+        margin-bottom: 0;
+    }
+
+    form > div:nth-of-type(1) {
+        flex: auto;
+    }
+
+    .input-task-button {
+        flex: none;
+        width: 100px;
+        margin: 0 0 0 14px;
+    }
+    
+    .react-datepicker-wrapper input {
+        text-align: center;
+        width: 80px;
+    }    
+    
 }
