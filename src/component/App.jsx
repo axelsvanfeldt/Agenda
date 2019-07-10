@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import Task from './Task';
+import getDate from '../logic/datetime';
 import './App.css';
 
 const useStateWithLocalStorage = (key, defaultVal) => {
@@ -17,17 +18,11 @@ const useStateWithLocalStorage = (key, defaultVal) => {
 }
 
 const App = () => {
-    const addDaysToDate = (days) => {
-        const date = new Date();
-        const newDate = date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        return new Date(newDate);
-    }
-    
     const defaultValues = {
         form: {
             text: '',
             priority: 1,
-            deadline: new Date(),
+            deadline: getDate(),
             edit: false
         },
         filters: {
@@ -39,31 +34,31 @@ const App = () => {
                 text: 'Learn something',
                 isComplete: false,
                 priority: 3,
-                deadline: addDaysToDate(7)
+                deadline: getDate(7)
             },
             {
                 text: 'Walk the dog',
                 isComplete: false,
                 priority: 3,
-                deadline: new Date()
+                deadline: getDate()
             },              
             {
                 text: 'Return VHS tapes',
                 isComplete: false,
                 priority: 2,
-                deadline: addDaysToDate(2)
+                deadline: getDate(2)
             },
             {
                 text: 'Purchase a new basketball',
                 isComplete: false,
                 priority: 1,
-                deadline: addDaysToDate(5)
+                deadline: getDate(5)
             },        
             {
                 text: 'Eat lunch',
                 isComplete: true,
                 priority: 1,
-                deadline: new Date()
+                deadline: getDate()
             },
         ]
     };
@@ -78,7 +73,7 @@ const App = () => {
         let sortedTasks = taskData;
         if (filterData.sort_by === 'deadline') {
             sortedTasks = taskData.sort((a, b) => {
-                let diff = new Date(a.deadline.toString().slice(0,10)) - new Date(b.deadline.toString().slice(0,10));
+                let diff = new Date(a.deadline) - new Date(b.deadline);
                 return diff ? diff : b.priority - a.priority;
             });
         }
@@ -90,7 +85,9 @@ const App = () => {
         }
         sortedTasks = sortedTasks.map((task, index) => {
             task.overdue = new Date(task.deadline) <= new Date() ? true : false;
-            if ((filterData.visible_tasks === 'completed' && !task.isComplete) || (filterData.visible_tasks === 'active' && task.isComplete)) return false;
+            if ((filterData.visible_tasks === 'completed' && !task.isComplete) || (filterData.visible_tasks === 'active' && task.isComplete)) {
+                return false;
+            }
             return (
                 <Task 
                     key={index} 
@@ -118,6 +115,7 @@ const App = () => {
     const completeTask = index => {
         const newTasks = [...taskData];
         newTasks[index].isComplete = newTasks[index].isComplete ? false : true;
+        console.log(newTasks[index].isComplete);
         setTasks(JSON.stringify(newTasks));
     }
     
