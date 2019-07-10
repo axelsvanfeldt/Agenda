@@ -6,9 +6,9 @@
 }
 
 .input-radio-option {
-    font-size: 0.9em;
+    font-size: 0.8em;
     opacity: 0.5;
-    margin: 0 2px 0 2px;
+    margin: 0 2px 8px 2px;
     background: #fff;
     padding: 5px 8px 5px 8px;
     border: var(--border-default);
