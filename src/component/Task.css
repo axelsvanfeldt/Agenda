@@ -76,7 +76,7 @@
     
     .task {
         flex-flow: row nowrap;
-        padding: 9px 0 9px 0;
+        padding: 10px 0 10px 0;
         border-bottom: 1px dashed #DDD;
     }
     .task:hover {
