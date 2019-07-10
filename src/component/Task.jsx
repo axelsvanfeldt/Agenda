@@ -20,7 +20,7 @@ const Task = ({task, index, completeTask, prepareEdit, removeTask, togglePriorit
                 <FontAwesomeIcon icon={completeIcon} onClick={() => completeTask(index)} />
             </div>
             <div className={`task-priority task-priority-${task.priority}`}>{getPriorityText(task.priority)}</div>
-            <div className="task-deadline">{task.deadline.toString().slice(0,10)}</div>
+            <div className="task-deadline">{task.deadline}</div>
             <div className="task-text">{task.text}</div>
             <div className="task-alter-icons">
                 <FontAwesomeIcon icon={faEdit} onClick={() => prepareEdit(index)} />
