@@ -1,8 +1,13 @@
-const getDate = (addDays = 0) => {
-    const date = new Date();
-    const addedTime = date.setTime(date.getTime() + (addDays * 24 * 60 * 60 * 1000));
-    const newDate = new Date(addedTime).toISOString().split('T')[0];
-    return newDate;
-}
+const datetime = {
+    getDate: (addDays = 0) => {
+        const date = new Date();
+        const addedTime = date.setTime(date.getTime() + (addDays * 24 * 60 * 60 * 1000));
+        return datetime.convertDate(addedTime);
+    },
+    convertDate: (time) => {
+        const date = new Date(time).toISOString().split('T')[0];
+        return date;
+    }
+};
 
-export default getDate;
+export default datetime;

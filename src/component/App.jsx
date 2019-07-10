@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import Task from './Task';
-import getDate from '../logic/datetime';
+import datetime from '../logic/datetime';
 import './App.css';
 
 const useStateWithLocalStorage = (key, defaultVal) => {
@@ -22,7 +22,7 @@ const App = () => {
         form: {
             text: '',
             priority: 1,
-            deadline: getDate(),
+            deadline: datetime.getDate(),
             edit: false
         },
         filters: {
@@ -34,31 +34,31 @@ const App = () => {
                 text: 'Learn something',
                 isComplete: false,
                 priority: 3,
-                deadline: getDate(7)
+                deadline: datetime.getDate(7)
             },
             {
                 text: 'Walk the dog',
                 isComplete: false,
                 priority: 3,
-                deadline: getDate()
+                deadline: datetime.getDate()
             },              
             {
                 text: 'Return VHS tapes',
                 isComplete: false,
                 priority: 2,
-                deadline: getDate(2)
+                deadline: datetime.getDate(2)
             },
             {
                 text: 'Purchase a new basketball',
                 isComplete: false,
                 priority: 1,
-                deadline: getDate(5)
+                deadline: datetime.getDate(5)
             },        
             {
                 text: 'Eat lunch',
                 isComplete: true,
                 priority: 1,
-                deadline: getDate()
+                deadline: datetime.getDate()
             },
         ]
     };
@@ -107,7 +107,7 @@ const App = () => {
             text: formValues.text,
             isComplete: false,
             priority: formValues.priority,
-            deadline: formValues.deadline
+            deadline: datetime.convertDate(formValues.deadline)
         }];
         setTasks(JSON.stringify(newTasks));
     }
@@ -115,7 +115,6 @@ const App = () => {
     const completeTask = index => {
         const newTasks = [...taskData];
         newTasks[index].isComplete = newTasks[index].isComplete ? false : true;
-        console.log(newTasks[index].isComplete);
         setTasks(JSON.stringify(newTasks));
     }
     
@@ -126,7 +125,6 @@ const App = () => {
     }
     
     const editTask = () => {
-        console.log("edit");
         const newTasks = [...taskData];
         newTasks[formValues.edit] = {
             text: formValues.text,
