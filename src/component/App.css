@@ -12,7 +12,7 @@
 @media all and (min-width: 768px) {
     
     .app-content {
-        padding: 40px;
+        padding: 50px 40px 30px 40px;
     }
     
 }
