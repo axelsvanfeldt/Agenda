@@ -78,10 +78,7 @@
     .task {
         flex-flow: row nowrap;
         padding: 8px 0 8px 0;
-        border-bottom: 1px dashed #DDD;
-    }
-    .task:hover {
-        border-bottom: 1px solid #DDD;
+        border-bottom: 1px dashed #ddd;
     }
     
     .task-complete-icons,

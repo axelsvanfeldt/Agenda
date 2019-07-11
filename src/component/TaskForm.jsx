@@ -6,7 +6,7 @@ import './TaskForm.css';
 const TaskForm = ({addTask, handleChange, handleSubmit, formValues}) => {
     return(
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-group">
                 <div className="input-label">Task</div>
                 <input
                     type="text" 
@@ -19,7 +19,7 @@ const TaskForm = ({addTask, handleChange, handleSubmit, formValues}) => {
                     required
                 />
             </div>
-            <div>
+            <div className="form-group">
                 <div className="input-label">Priority</div>
                 <select onChange={(e) => handleChange('priority', parseInt(e.target.value))} value={formValues.priority}>
                     <option value="3">High</option>
@@ -27,7 +27,7 @@ const TaskForm = ({addTask, handleChange, handleSubmit, formValues}) => {
                     <option value="1">Low</option>
                 </select>
             </div>
-            <div>
+            <div className="form-group">
                 <div className="input-label">Deadline</div>
                 <DatePicker
                     dateFormat="yyyy-MM-dd"

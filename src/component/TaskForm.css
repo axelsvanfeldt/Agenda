@@ -7,23 +7,43 @@ form {
     flex-flow: row wrap;
 }
 
-form > div:nth-of-type(1) {
+.form-group:nth-of-type(1) {
     flex: 1 0 100%;
+}
+
+.form-group:nth-of-type(3) .input-label {
+    padding-left: 0;
+    text-align: center;
+}
+
+.input-label,
+.input-task-button {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8em;
+    text-transform: uppercase;
 }
 
 .input-label {
     padding: 0 0 6px 12px;
     text-align: left;
-    font-weight: 700;
-    font-size: 0.8em;
-    text-transform: uppercase;
     color: #fff;
 }
 
-form > div:nth-of-type(3) .input-label {
-    padding-left: 0;
-    text-align: center;
+.input-task-button {
+    flex: 1 1 80%;
+    border: none;
+    background-color: rgba(255,255,255,0.2);
+    width: 90px;
+    height: 40px;
+    font-family: inherit;
+    cursor: pointer;
+    border-bottom: 2px solid var(--color-pink);
 }
+.input-task-button:hover {
+    border-bottom: 2px solid var(--color-yellow);
+}
+
 
 input, 
 select {
@@ -55,24 +75,6 @@ select option {
     color: #444;
 }
 
-.input-task-button {
-    flex: 1 1 80%;
-    border: none;
-    background-color: rgba(255,255,255,0.2);
-    width: 90px;
-    height: 40px;
-    color: #FFF;
-    font-size: 0.8em;
-    font-weight: 700;
-    font-family: inherit;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-bottom: 2px solid var(--color-pink);
-}
-.input-task-button:hover {
-    border-bottom: 2px solid var(--color-yellow);
-}
-
 .input-task-text {
     width: calc(100% - 24px);
 }
@@ -93,7 +95,7 @@ select option {
         margin-bottom: 0;
     }
 
-    form > div:nth-of-type(1) {
+    .form-group:nth-of-type(1) {
         flex: auto;
     }
 
