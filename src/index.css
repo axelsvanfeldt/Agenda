@@ -44,7 +44,11 @@ div::-webkit-scrollbar-thumb {
 
 a:link,
 a:visited {
-    color: #fff;
+    color: var(--color-pink);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-blue);
     text-decoration: none;
 }
 
