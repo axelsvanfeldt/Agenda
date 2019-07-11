@@ -22,7 +22,7 @@ const App = () => {
         form: {
             text: '',
             priority: 1,
-            deadline: datetime.getDate(),
+            deadline: datetime.getDate(1),
             edit: false
         },
         filters: {
@@ -78,13 +78,13 @@ const App = () => {
         let sortedTasks = [...taskData];
         if (filterData.sort_by === 'deadline') {
             sortedTasks = sortedTasks.sort((a, b) => {
-                let diff = new Date(a.deadline) - new Date(b.deadline);
+                const diff = new Date(a.deadline) - new Date(b.deadline);
                 return diff ? diff : b.priority - a.priority;
             });
         }
         else {
             sortedTasks = sortedTasks.sort((a, b) => {
-                let diff = b.priority - a.priority;
+                const diff = b.priority - a.priority;
                 return diff ? diff : new Date(a.deadline) - new Date(b.deadline);
             });
         }
@@ -93,7 +93,7 @@ const App = () => {
     }
     
     const renderTasks = () => {
-        const filteredTasks = filterTasks().map((task) => 
+        const filteredTasks = filterTasks().map(task => 
             <Task 
                 key={task.index} 
                 task={task} 
