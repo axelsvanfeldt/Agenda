@@ -7,6 +7,7 @@ const TaskList = ({renderTasks, handleFilterChange, filters}) => {
         <div className="task-list">
             <TaskFilters handleChange={handleFilterChange} filters={filters} />
             {renderTasks()}
+            <a href="https://codeant.se" rel="noopener noreferrer" target="_blank">Hosted by codeant.se</a>
         </div>
     )
 }

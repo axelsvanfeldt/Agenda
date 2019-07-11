@@ -186,7 +186,6 @@ const App = () => {
                     handleFilterChange={handleFilterChange} 
                     filters={filterData} 
                 />
-                <a href="https://codeant.se" rel="noopener noreferrer" target="_blank">codeant.se</a>
             </div>
         </div>
     )
