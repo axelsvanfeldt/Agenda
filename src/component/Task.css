@@ -1,5 +1,5 @@
 .task {
-    padding: 14px 0 14px 0;
+    padding: 14px 0 12px 0;
     /*flex-wrap: nowrap;*/
     justify-content: space-between;
     display: flex;
@@ -51,10 +51,11 @@
 }
 
 .task-text {
+    font-size: 0.9em;
     align-self: flex-end;
     order: 5;
     flex: 0 0 100%;
-    padding: 8px 0 0 0;
+    padding: 8px 0 0 4px;
 }
 
 .task svg {
@@ -101,6 +102,7 @@
     }
     
     .task-text {
+        font-size: 1em;
         padding: 0 14px 0 14px;
         flex: auto;
         align-self: auto;
