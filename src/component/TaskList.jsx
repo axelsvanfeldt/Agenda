@@ -3,7 +3,7 @@ import TaskFilters from './TaskFilters';
 import './TaskList.css';
 
 const TaskList = ({renderTasks, handleFilterChange, filters}) => {
-    return(
+    return (
         <div className="task-list">
             <TaskFilters handleChange={handleFilterChange} filters={filters} />
             {renderTasks()}

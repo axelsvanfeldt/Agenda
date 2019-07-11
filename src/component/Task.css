@@ -77,7 +77,7 @@
     
     .task {
         flex-flow: row nowrap;
-        padding: 10px 0 10px 0;
+        padding: 8px 0 8px 0;
         border-bottom: 1px dashed #DDD;
     }
     .task:hover {
@@ -102,7 +102,6 @@
     }
     
     .task-text {
-        font-size: 1em;
         padding: 0 14px 0 14px;
         flex: auto;
         align-self: auto;

@@ -9,8 +9,13 @@
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
+.task-count {
+    font-size: 0.8em;
+    margin: 0 0 8px 2px;
+}
+
 .task-list > a {
-    font-size: 0.9em;
+    font-size: 0.8em;
     display: block;
     margin-top: 14px;
 }

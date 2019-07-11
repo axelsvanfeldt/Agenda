@@ -31,30 +31,35 @@ const App = () => {
         },
         tasks: [     
             {
+                index: 0,
                 text: 'Learn something',
                 isComplete: false,
                 priority: 3,
                 deadline: datetime.getDate(7)
             },
             {
+                index: 1,
                 text: 'Walk the dog',
                 isComplete: false,
                 priority: 3,
                 deadline: datetime.getDate()
             },              
             {
+                index: 2,
                 text: 'Return VHS tapes',
                 isComplete: false,
                 priority: 2,
                 deadline: datetime.getDate(2)
             },
             {
+                index: 3,
                 text: 'Purchase a new basketball',
                 isComplete: false,
                 priority: 1,
                 deadline: datetime.getDate(5)
             },        
             {
+                index: 4,
                 text: 'Eat lunch',
                 isComplete: true,
                 priority: 1,
@@ -69,41 +74,42 @@ const App = () => {
     const taskData = JSON.parse(tasks);
     const filterData = JSON.parse(filters);
     
-    const renderTasks = () => {
-        let sortedTasks = taskData;
+    const filterTasks = () => {
+        let sortedTasks = [...taskData];
         if (filterData.sort_by === 'deadline') {
-            sortedTasks = taskData.sort((a, b) => {
+            sortedTasks = sortedTasks.sort((a, b) => {
                 let diff = new Date(a.deadline) - new Date(b.deadline);
                 return diff ? diff : b.priority - a.priority;
             });
         }
         else {
-            sortedTasks = taskData.sort((a, b) => {
+            sortedTasks = sortedTasks.sort((a, b) => {
                 let diff = b.priority - a.priority;
                 return diff ? diff : new Date(a.deadline) - new Date(b.deadline);
             });
         }
-        sortedTasks = sortedTasks.map((task, index) => {
-            task.overdue = new Date(task.deadline) <= new Date() ? true : false;
-            if ((filterData.visible_tasks === 'completed' && !task.isComplete) || (filterData.visible_tasks === 'active' && task.isComplete)) {
-                return false;
-            }
-            return (
-                <Task 
-                    key={index} 
-                    index={index} 
-                    task={task} 
-                    completeTask={completeTask}
-                    prepareEdit={prepareEdit} 
-                    removeTask={removeTask} 
-                />
-            )
-        });
-        return sortedTasks;
+        const filteredTasks = sortedTasks.filter((task) => !((filterData.visible_tasks === 'completed' && !task.isComplete) || (filterData.visible_tasks === 'active' && task.isComplete)));
+        return filteredTasks;
+    }
+    
+    const renderTasks = () => {
+        const filteredTasks = filterTasks().map((task) => 
+            <Task 
+                key={task.index} 
+                task={task} 
+                completeTask={completeTask}
+                prepareEdit={prepareEdit} 
+                removeTask={removeTask} 
+            />
+        );
+        const taskCount = <div key="task-count" className="task-count">Showing {filteredTasks.length} out of {taskData.length} tasks.</div>;
+        filteredTasks.unshift(taskCount);
+        return filteredTasks;
     }
     
     const addTask = () => {
         const newTasks = [...taskData, {
+            index: taskData.length,
             text: formValues.text,
             isComplete: false,
             priority: formValues.priority,
@@ -167,7 +173,6 @@ const App = () => {
             sort_by: filterData.sort_by,
             visible_tasks: filterData.visible_tasks
         };
-        //value = filter === 'sort_by' ? value : JSON.parse(value);
         data[filter] = value;
         setFilters(JSON.stringify(data));
     } 
