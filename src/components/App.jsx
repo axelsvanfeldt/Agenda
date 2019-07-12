@@ -1,21 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import Task from './Task';
 import datetime from '../logic/datetime';
+import useLocalStorageState from '../hooks/useLocalStorageState';
 import './App.css';
-
-const useStateWithLocalStorage = (key, defaultVal) => {
-    const [value, setValue] = useState(
-        localStorage.getItem(key) || defaultVal
-    );
-
-    useEffect(() => {
-        localStorage.setItem(key, value);
-    });
-
-    return [value, setValue];
-}
 
 const App = () => {
     const defaultValues = {
@@ -68,8 +57,8 @@ const App = () => {
         ]
     };
     
-    const [tasks, setTasks] = useStateWithLocalStorage('tasks', JSON.stringify(defaultValues.tasks));
-    const [filters, setFilters] = useStateWithLocalStorage('filters', JSON.stringify(defaultValues.filters));
+    const [tasks, setTasks] = useLocalStorageState('tasks', JSON.stringify(defaultValues.tasks));
+    const [filters, setFilters] = useLocalStorageState('filters', JSON.stringify(defaultValues.filters));
     const [formValues, setFormValues] = useState(defaultValues.form);
     const taskData = JSON.parse(tasks);
     const filterData = JSON.parse(filters);
