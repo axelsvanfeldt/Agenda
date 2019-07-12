@@ -25,29 +25,25 @@ const App = () => {
                 isComplete: false,
                 priority: 3,
                 deadline: datetime.getDate(7)
-            },
-            {
+            },{
                 index: 1,
                 text: 'Walk the dog',
                 isComplete: false,
                 priority: 3,
                 deadline: datetime.getDate()
-            },              
-            {
+            },{
                 index: 2,
                 text: 'Return VHS tapes',
                 isComplete: false,
                 priority: 2,
                 deadline: datetime.getDate(2)
-            },
-            {
+            },{
                 index: 3,
                 text: 'Purchase a new basketball',
                 isComplete: false,
                 priority: 1,
                 deadline: datetime.getDate(5)
-            },        
-            {
+            },{
                 index: 4,
                 text: 'Eat lunch',
                 isComplete: true,
